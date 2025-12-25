@@ -57,7 +57,3 @@ No identities. No noise. Just words — written when the world is quiet.
    - Users are redirected to a locked page.
 5. All users see the same thoughts across devices.
 
----
-
-## 📁 Project Structure
-
