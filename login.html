@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login • Midnight Thoughts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <audio id="bgSound" loop muted>
+    <source src="/assets/Sounds/backsound.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div style="
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  ">
+    <div>
+      <img src="/assets/Images/icons/moon.svg" width="48" />
+      <h1>Midnight Thoughts</h1>
+      <p>Enter quietly.</p>
+      <button id="enterBtn">Enter Anonymously</button>
+    </div>
+  </div>
+
+  <script src="/js/auth.js"></script>
+
+  <script>
+    const bgSound = document.getElementById("bgSound");
+    const enableSound = () => {
+      bgSound.muted = false;
+      bgSound.volume = 0.25;
+      bgSound.play().catch(() => {});
+      document.removeEventListener("click", enableSound);
+    };
+    document.addEventListener("click", enableSound);
+  </script>
+
+</body>
+</html>

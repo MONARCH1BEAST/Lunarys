@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About • Midnight Thoughts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <audio id="bgSound" loop muted>
+    <source src="/assets/sounds/backsound.mp3" type="audio/mpeg" />
+  </audio>
+
+  <header>
+    <img src="/assets/images/icons/moon.svg" width="36" />
+    <h1>About</h1>
+  </header>
+
+  <main>
+    <div class="thought">
+      <img src="/assets/images/illustrations/empty.svg" width="120" />
+      <p class="thought-text">
+        Midnight Thoughts exists for words that don’t survive daylight.
+        Anonymous. Quiet. Temporary.
+      </p>
+    </div>
+  </main>
+
+  <div id="pageLoader">
+    <div class="loader-dot"></div>
+  </div>
+
+  <script src="/js/lock.js"></script>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("pageLoader")?.classList.add("hide");
+    });
+
+    const bgSound = document.getElementById("bgSound");
+    const enableSound = () => {
+      bgSound.muted = false;
+      bgSound.volume = 0.25;
+      bgSound.play().catch(() => {});
+      document.removeEventListener("click", enableSound);
+    };
+    document.addEventListener("click", enableSound);
+  </script>
+
+</body>
+</html>

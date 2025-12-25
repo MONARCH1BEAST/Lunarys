@@ -1,0 +1,274 @@
+/* =========================
+   RESET + BASE
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(40,40,80,0.85), rgba(5,5,15,0.95)),
+    url("/assets/images/backgrounds/night.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #e6e6eb;
+  line-height: 1.6;
+}
+
+/* =========================
+   HEADERS
+   ========================= */
+
+header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+header img {
+  margin-bottom: 0.6rem;
+  opacity: 0.9;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+header p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 0.3rem;
+}
+
+/* =========================
+   MAIN LAYOUT
+   ========================= */
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* =========================
+   LOGIN PAGE
+   ========================= */
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  max-width: 360px;
+  width: 100%;
+}
+
+.login-box img {
+  margin-bottom: 0.8rem;
+}
+
+.login-box h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.login-box p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+button,
+.btn {
+  background: linear-gradient(135deg, #5c5cff, #7a7aff);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.8rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s;
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(92,92,255,0.35);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================
+   WRITE PAGE
+   ========================= */
+
+.write-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 18px;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+textarea {
+  width: 100%;
+  min-height: 140px;
+  resize: none;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 1rem;
+  color: #e6e6eb;
+  font-size: 0.95rem;
+}
+
+textarea::placeholder {
+  opacity: 0.6;
+}
+
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(92,92,255,0.45);
+}
+
+.char-count {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  margin: 0.4rem 0.2rem;
+}
+
+.write-actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   THOUGHT FEED
+   ========================= */
+
+.thought {
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 1.4rem;
+  margin-bottom: 1.2rem;
+  backdrop-filter: blur(6px);
+}
+
+.thought-text {
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.thought-meta {
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* =========================
+   STATE BOX (EMPTY / LOCKED)
+   ========================= */
+
+.state-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.state-box span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+/* =========================
+   LOCKED PAGE
+   ========================= */
+
+.locked-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.locked-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 18px;
+  padding: 2.2rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+/* =========================
+   PAGE LOADER
+   ========================= */
+
+#pageLoader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #1b1b2f, #0a0a12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#pageLoader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-dot {
+  width: 12px;
+  height: 12px;
+  background: #7a7aff;
+  border-radius: 50%;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.8); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.4; }
+}

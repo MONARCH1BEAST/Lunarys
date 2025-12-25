@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Midnight Thoughts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <!-- Background Sound -->
+  <audio id="bgSound" loop muted>
+    <source src="/assets/sounds/backsound.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Header -->
+  <header>
+    <img src="/assets/images/icons/moon.svg" width="36" alt="Moon" />
+    <h1>Midnight Thoughts</h1>
+    <p>Write what you can’t say in daylight</p>
+
+    <!-- ✅ ABOUT LINK (ADDED) -->
+    <div style="margin-top: 0.8rem;">
+      <a href="/about" style="font-size: 0.8rem; opacity: 0.7;">
+        About this space
+      </a>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <div class="write-actions">
+      <a href="/write" class="btn">
+        <img src="/assets/images/icons/write.svg" width="16" />
+        Write a thought
+      </a>
+    </div>
+
+    <div id="thoughtsContainer"></div>
+  </main>
+
+  <!-- Loader -->
+  <div id="pageLoader">
+    <div class="loader-dot"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/js/lock.js"></script>
+  <script src="/js/main.js"></script>
+
+  <script>
+    // Loader
+    window.addEventListener("load", () => {
+      document.getElementById("pageLoader")?.classList.add("hide");
+    });
+
+    // Sound activation
+    const bgSound = document.getElementById("bgSound");
+    const enableSound = () => {
+      bgSound.muted = false;
+      bgSound.volume = 0.25;
+      bgSound.play().catch(() => {});
+      document.removeEventListener("click", enableSound);
+    };
+    document.addEventListener("click", enableSound);
+  </script>
+
+</body>
+</html>

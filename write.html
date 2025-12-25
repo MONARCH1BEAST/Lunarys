@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Write • Midnight Thoughts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <audio id="bgSound" loop muted>
+    <source src="/assets/Sounds/backsound.mp3" type="audio/mpeg" />
+  </audio>
+
+  <header>
+    <img src="/assets/Images/icons/write.svg" width="36" />
+    <h1>Write a Thought</h1>
+    <p>Say it quietly.</p>
+  </header>
+
+  <main>
+    <div class="write-box">
+      <textarea id="thoughtInput" maxlength="280"
+        placeholder="It’s quiet now. Write what you feel."></textarea>
+
+      <div class="char-count" id="charCount">0 / 280</div>
+
+      <div class="write-actions">
+        <button id="postBtn" disabled>Post</button>
+      </div>
+    </div>
+  </main>
+
+  <div id="pageLoader">
+    <div class="loader-dot"></div>
+  </div>
+
+  <script src="/js/lock.js"></script>
+  <script src="/js/write.js"></script>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("pageLoader")?.classList.add("hide");
+    });
+
+    const bgSound = document.getElementById("bgSound");
+    const enableSound = () => {
+      bgSound.muted = false;
+      bgSound.volume = 0.25;
+      bgSound.play().catch(() => {});
+      document.removeEventListener("click", enableSound);
+    };
+    document.addEventListener("click", enableSound);
+  </script>
+
+</body>
+</html>
