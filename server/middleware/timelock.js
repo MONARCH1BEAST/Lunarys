@@ -1,7 +1,7 @@
 // server/middleware/timeLock.js
 
 // 🔧 DEV MODE (set false before final submission)
-const DEV_MODE = true;
+const DEV_MODE = false;
 
 // Midnight window
 const START_HOUR = 0; // 12 AM
