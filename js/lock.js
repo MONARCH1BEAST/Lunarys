@@ -1,7 +1,7 @@
 // js/lock.js
 
 // 🔧 DEV MODE (set to false before final submission)
-const DEV_MODE = true;
+const DEV_MODE = false;
 
 // Pages that should always be accessible
 const PUBLIC_PAGES = ["login.html", "locked.html"];
